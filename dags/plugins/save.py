@@ -6,7 +6,7 @@ def save_raw_data(nome_raiz:str, row_data:dict, dt_consulta):
     init = 'raw'
     timestamp = dt_consulta
 
-    nome_pasta = '../Airflow/data/raw'
+    nome_pasta = '/opt/airflow/data/raw'
 
     extencao_arquivo = ".json"
     nome_base = nome_raiz   
@@ -22,4 +22,3 @@ def save_raw_data(nome_raiz:str, row_data:dict, dt_consulta):
     except IOError as e:
         print(f'Erro ao salvar o arquivo: {e}')
 
-    return nome_arquivo

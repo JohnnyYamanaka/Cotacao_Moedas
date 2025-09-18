@@ -158,3 +158,5 @@ dags/__pycache__/
 # Airflow plugins and temporary files
 plugins/__pycache__/
 plugins/*.pyc
+
+data/raw/*.json
