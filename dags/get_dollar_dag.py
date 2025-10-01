@@ -11,8 +11,9 @@ import pendulum
 
 # from ..plugins import extract_data, transform
 # from plugins import extract_data, transform
-from plugins import extract_data, transform
+from plugins import extract_data
 from plugins.save import save_raw_data
+from plugins.transform_usd import transform_data
 
 local_tz = pendulum.timezone("America/Sao_Paulo")
 
@@ -27,7 +28,6 @@ def get_dollar_dag():
     def get_ds_dash():
         contex = get_current_context()
         return contex['ds_nodash']
-
 
     @task
     def extract(**kwargs):
@@ -45,7 +45,7 @@ def get_dollar_dag():
 
     @task
     def transform_data(extracao):
-        return transform.transform_data(extracao)
+        return transform_data.transform_data(extracao)
     
 
     raw = extract()
