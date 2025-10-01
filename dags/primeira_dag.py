@@ -1,17 +1,16 @@
-
 from datetime import datetime
 
 from airflow.decorators import dag, task
 
 from time import sleep
 
-@dag(start_date=datetime(2025, 3, 24), 
-     schedule="@daily", 
-     catchup=False)
+
+@dag(start_date=datetime(2025, 3, 24), schedule="@daily", catchup=False)
 def primeira_dag_com_python_operator():
     """
     minha primeira Pipipeline
     """
+
     @task
     def primeira_atividade():
         print("Primeira atividade iniciada")
@@ -35,5 +34,6 @@ def primeira_dag_com_python_operator():
     t3 = terceira_atividade()
 
     t1 >> t2 >> t3
+
 
 primeira_dag_com_python_operator()
