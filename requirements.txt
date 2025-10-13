@@ -5,7 +5,7 @@ apache-airflow==2.10.5
 apache-airflow-providers-amazon
 apache-airflow-providers-google
 apache-airflow-providers-docker
-apache-airflow-providers-postgres
+apache-airflow-providers-postgres==5.0.0
 
 # Bibliotecas úteis para manipulação de dados
 pandas
