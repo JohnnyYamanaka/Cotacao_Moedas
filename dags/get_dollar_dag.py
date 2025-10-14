@@ -45,23 +45,13 @@ def get_dollar_dag():
         save_raw_data(nome_raiz, row_data, dt_consulta)
 
     @task
-<<<<<<< HEAD
-    def transform_data_usd(extracao):
+    def transform_currency_usd(extracao):
         return transform_data(extracao)
-=======
-    def transform_data(extracao):
-        return transform_data.transform_data(extracao)
->>>>>>> f223335b991c0562de6c7b263e2b1fdb6995e0bd
     
-
     raw = extract()
     ds = get_ds_dash()
     save_raw = save_data(raw, ds)
-<<<<<<< HEAD
-    transformacao = transform_data_usd(raw)
-=======
-    transformacao = transform(raw)
->>>>>>> f223335b991c0562de6c7b263e2b1fdb6995e0bd
+    transformacao = transform_currency_usd(raw)
 
     ds >> raw >> [save_raw, transformacao]
 
